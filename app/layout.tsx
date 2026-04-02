@@ -12,15 +12,24 @@ export const metadata: Metadata = {
   openGraph: {
     title: "2026 State of Enterprise AI Security — Benchmark Report",
     description:
-      "73% of employees use AI tools without IT approval. Explore the full benchmark data.",
+      "73% of employees use AI tools without IT approval. Explore the full benchmark data from 500+ enterprises.",
     type: "website",
-    url: "https://aisecuritybenchmark.com",
+    url: "https://aisecuritybenchmark.org",
+    images: [
+      {
+        url: "https://aisecuritybenchmark.org/images/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "2026 State of Enterprise AI Security Benchmark Report",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "2026 State of Enterprise AI Security — Benchmark Report",
     description:
-      "73% of employees use AI tools without IT approval. Explore the full benchmark data.",
+      "73% of employees use AI tools without IT approval. Explore the full benchmark data from 500+ enterprises.",
+    images: ["https://aisecuritybenchmark.org/images/og-image.png"],
   },
 };
 
@@ -32,6 +41,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -77,7 +88,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="min-h-screen flex flex-col">
+      <body className="min-h-screen flex flex-col overflow-x-hidden">
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />

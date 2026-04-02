@@ -110,8 +110,19 @@ const industries = [
 
 export default function Industries() {
   return (
-    <div className="py-20 px-4">
-      <div className="max-w-6xl mx-auto">
+    <div className="relative py-24 px-4 overflow-hidden">
+      {/* Subtle hero background */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          backgroundImage: "url(/images/hero-bg.jpg)",
+          backgroundSize: "cover",
+          backgroundPosition: "center top",
+          backgroundAttachment: "fixed",
+          opacity: 0.035,
+        }}
+      />
+      <div className="max-w-6xl mx-auto relative">
         <SectionHeading
           tag="Industry Breakdown"
           title="AI Security Posture by Industry"
@@ -119,11 +130,8 @@ export default function Industries() {
         />
 
         {/* Comparison overview */}
-        <div
-          className="rounded-2xl p-8 border border-white/10 mb-12"
-          style={{ background: "linear-gradient(135deg, #1a0533, #11021d)" }}
-        >
-          <h3 className="text-lg font-semibold text-white mb-6">AI Adoption Rate by Industry</h3>
+        <div className="glass-card rounded-2xl p-8 md:p-10 mb-10">
+          <h3 className="text-lg font-semibold text-white mb-7">AI Adoption Rate by Industry</h3>
           <HorizontalBar
             data={industries.map((ind) => ({
               label: ind.name,
@@ -133,38 +141,36 @@ export default function Industries() {
         </div>
 
         {/* Individual cards */}
-        <div className="space-y-8">
+        <div className="space-y-6">
           {industries.map((ind, i) => (
             <div
               key={ind.name}
-              className="rounded-2xl p-8 border border-white/10 animate-fade-in-up"
-              style={{
-                background: "linear-gradient(135deg, #1a0533, #11021d)",
-                animationDelay: `${i * 0.05}s`,
-              }}
+              className="glass-card rounded-2xl p-8 md:p-10 animate-fade-in-up"
+              style={{ animationDelay: `${i * 0.05}s` }}
             >
-              <div className="flex flex-col lg:flex-row gap-8">
+              <div className="flex flex-col lg:flex-row gap-10">
                 <div className="flex-1">
-                  <div className="flex items-center gap-3 mb-4">
-                    <h3 className="text-2xl font-bold text-white">{ind.name}</h3>
+                  <div className="flex items-center gap-3 mb-5">
+                    <h3 className="text-2xl font-bold text-white tracking-tight">{ind.name}</h3>
                     <span
-                      className="text-xs font-semibold px-2.5 py-0.5 rounded-full"
+                      className="text-[11px] font-semibold px-2.5 py-1 rounded-full"
                       style={{
-                        background: `${ind.riskColor}20`,
+                        background: `${ind.riskColor}15`,
                         color: ind.riskColor,
+                        border: `1px solid ${ind.riskColor}30`,
                       }}
                     >
                       {ind.riskLevel} Risk
                     </span>
                   </div>
-                  <p className="text-gray-300 mb-4">{ind.summary}</p>
-                  <div className="mb-4">
-                    <h4 className="text-sm font-semibold text-white mb-2">Common AI Tools</h4>
+                  <p className="text-gray-400 mb-5 leading-relaxed">{ind.summary}</p>
+                  <div className="mb-5">
+                    <h4 className="text-sm font-semibold text-white mb-3">Common AI Tools</h4>
                     <div className="flex flex-wrap gap-2">
                       {ind.tools.map((tool) => (
                         <span
                           key={tool}
-                          className="text-xs px-2.5 py-1 rounded-full border border-white/10 text-gray-300"
+                          className="text-xs px-3 py-1.5 rounded-full border border-white/[0.08] text-gray-400 bg-white/[0.03]"
                         >
                           {tool}
                         </span>
@@ -172,19 +178,19 @@ export default function Industries() {
                     </div>
                   </div>
                   <div>
-                    <h4 className="text-sm font-semibold text-white mb-2">Key Compliance Challenges</h4>
-                    <ul className="space-y-1">
+                    <h4 className="text-sm font-semibold text-white mb-3">Key Compliance Challenges</h4>
+                    <ul className="space-y-2">
                       {ind.challenges.map((c, j) => (
-                        <li key={j} className="text-sm text-gray-400 flex items-start gap-2">
-                          <span className="text-brand-light mt-0.5">•</span>
+                        <li key={j} className="text-sm text-gray-400 flex items-start gap-2.5 leading-relaxed">
+                          <span className="text-brand-accent mt-0.5 text-xs">●</span>
                           {c}
                         </li>
                       ))}
                     </ul>
                   </div>
                 </div>
-                <div className="flex flex-row lg:flex-col items-center gap-6 lg:gap-4">
-                  <DonutChart value={ind.adoption} label="AI Adoption" color="#8B3FD4" size={100} />
+                <div className="flex flex-row lg:flex-col items-center gap-6 lg:gap-5">
+                  <DonutChart value={ind.adoption} label="AI Adoption" color="#06b6d4" size={100} />
                   <DonutChart value={ind.shadowAI} label="Shadow AI" color={ind.riskColor} size={100} />
                   <DonutChart value={ind.policyRate} label="Policy Rate" color="#22c55e" size={100} />
                 </div>
@@ -196,3 +202,4 @@ export default function Industries() {
     </div>
   );
 }
+
