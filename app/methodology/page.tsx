@@ -37,8 +37,19 @@ const SOURCES = [
 
 export default function Methodology() {
   return (
-    <div className="py-20 px-4">
-      <div className="max-w-4xl mx-auto">
+    <div className="relative py-24 px-4 overflow-hidden">
+      {/* Subtle data background */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          backgroundImage: "url(/images/section-data-bg.jpg)",
+          backgroundSize: "cover",
+          backgroundPosition: "center top",
+          backgroundAttachment: "fixed",
+          opacity: 0.04,
+        }}
+      />
+      <div className="max-w-4xl mx-auto relative">
         <SectionHeading
           tag="Methodology"
           title="How This Benchmark Is Compiled"

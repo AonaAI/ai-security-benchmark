@@ -10,8 +10,19 @@ export const metadata: Metadata = {
 
 export default function Download() {
   return (
-    <div className="py-20 px-4">
-      <div className="max-w-2xl mx-auto">
+    <div className="relative py-24 px-4 overflow-hidden">
+      {/* Subtle CTA background */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          backgroundImage: "url(/images/cta-bg.jpg)",
+          backgroundSize: "cover",
+          backgroundPosition: "center top",
+          backgroundAttachment: "fixed",
+          opacity: 0.04,
+        }}
+      />
+      <div className="max-w-2xl mx-auto relative">
         <SectionHeading
           tag="Full Report"
           title="The PDF Edition Is in Production"
