@@ -1,5 +1,3 @@
-"use client";
-
 import Link from "next/link";
 
 export default function Footer() {
@@ -20,9 +18,12 @@ export default function Footer() {
             <Link href="/about" className="block hover:text-white transition-colors">About</Link>
           </div>
         </div>
-        <div className="max-w-7xl mx-auto mt-12 pt-8 border-t border-white/[0.06] flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-gray-600">
-          <span>© 2026 Aona AI. All rights reserved.</span>
-          <span>Data is illustrative and based on industry research trends.</span>
+        <div>
+          <p className="font-semibold text-white mb-2">Aona AI</p>
+          <p>Helping enterprises secure their AI ecosystem.</p>
+          <a href="https://aona.ai" target="_blank" rel="noopener noreferrer" className="text-brand-light hover:text-white mt-2 inline-block transition-colors">
+            Visit aona.ai →
+          </a>
         </div>
       </div>
       <div className="max-w-7xl mx-auto mt-8 pt-8 border-t border-white/10 text-center text-xs text-gray-500">

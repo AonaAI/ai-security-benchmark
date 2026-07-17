@@ -21,17 +21,20 @@ function FindingCard({
 }) {
   return (
     <div
-      className="glass-card rounded-2xl p-8 md:p-10 animate-fade-in-up"
-      style={{ animationDelay: `${number * 0.05}s` }}
+      className="rounded-2xl p-8 border border-white/10 animate-fade-in-up"
+      style={{
+        background: "linear-gradient(135deg, #1a0533, #11021d)",
+        animationDelay: `${number * 0.05}s`,
+      }}
     >
-      <div className="flex items-start gap-4 mb-7">
+      <div className="flex items-start gap-4 mb-6">
         <span
-          className="flex-shrink-0 w-11 h-11 rounded-xl flex items-center justify-center text-sm font-bold text-white shadow-glow"
-          style={{ background: "linear-gradient(135deg, #22d3ee, #06b6d4)" }}
+          className="flex-shrink-0 w-10 h-10 rounded-xl flex items-center justify-center text-sm font-bold text-white"
+          style={{ background: "linear-gradient(135deg, #6412A6, #8B3FD4)" }}
         >
           {number}
         </span>
-        <h3 className="text-xl font-bold text-white tracking-tight pt-1.5">{title}</h3>
+        <h3 className="text-xl font-bold text-white">{title}</h3>
       </div>
       {children}
     </div>
@@ -40,19 +43,8 @@ function FindingCard({
 
 export default function Findings() {
   return (
-    <div className="relative py-24 px-4 overflow-hidden">
-      {/* Subtle data visualization background */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          backgroundImage: "url(/images/section-data-bg.jpg)",
-          backgroundSize: "cover",
-          backgroundPosition: "center top",
-          backgroundAttachment: "fixed",
-          opacity: 0.04,
-        }}
-      />
-      <div className="max-w-5xl mx-auto relative">
+    <div className="py-20 px-4">
+      <div className="max-w-5xl mx-auto">
         <SectionHeading
           tag="Key Findings"
           title="10 Critical Insights from the 2026 Benchmark"
@@ -72,7 +64,7 @@ export default function Findings() {
         <div className="space-y-8">
           {/* Finding 1 */}
           <FindingCard number={1} title="Shadow AI Prevalence by Industry">
-            <p className="text-gray-400 mb-7 leading-relaxed">
+            <p className="text-gray-300 mb-6">
               Shadow AI — unsanctioned use of AI tools — is pervasive across every sector. Technology leads at 82%,
               but even government agencies report 47% unauthorized AI usage. The gap between IT awareness and
               actual employee behavior is the single largest blind spot in enterprise security today.
@@ -91,7 +83,7 @@ export default function Findings() {
 
           {/* Finding 2 */}
           <FindingCard number={2} title="Most Common Unmanaged AI Tools">
-            <p className="text-gray-400 mb-7 leading-relaxed">
+            <p className="text-gray-300 mb-6">
               ChatGPT remains the most widely used unsanctioned AI tool at 84% of enterprises,
               followed by Copilot (67%), Gemini (52%), and Claude (41%). Image generators and
               specialized coding assistants round out the top tier.
@@ -122,7 +114,7 @@ export default function Findings() {
                 { label: "HR / PII", value: 14 },
                 { label: "Trade Secrets", value: 11 },
               ]}
-              height={200}
+              height={180}
             />
           </FindingCard>
 
@@ -140,7 +132,7 @@ export default function Findings() {
 
           {/* Finding 5 */}
           <FindingCard number={5} title="AI Governance Tool Deployment">
-            <p className="text-gray-400 mb-7 leading-relaxed">
+            <p className="text-gray-300 mb-6">
               Despite growing awareness, only 18% of enterprises have deployed dedicated AI governance
               or monitoring tools. Most rely on existing DLP solutions (34%) that were not designed for
               AI-specific risks, while 48% have no tooling at all.
@@ -157,7 +149,7 @@ export default function Findings() {
 
           {/* Finding 6 */}
           <FindingCard number={6} title="Employee AI Training Status">
-            <p className="text-gray-400 mb-7 leading-relaxed">
+            <p className="text-gray-300 mb-6">
               Only 21% of enterprises provide formal AI security training to employees. Meanwhile,
               67% of employees report learning to use AI tools through self-study or peer sharing —
               with zero security guidance.
@@ -171,7 +163,7 @@ export default function Findings() {
 
           {/* Finding 7 */}
           <FindingCard number={7} title="Compliance Readiness by Framework">
-            <p className="text-gray-400 mb-7 leading-relaxed">
+            <p className="text-gray-300 mb-6">
               As regulatory frameworks like the EU AI Act, NIST AI RMF, and ISO 42001 take shape,
               most enterprises are unprepared. Only 8% report full readiness for any major AI compliance framework.
             </p>
@@ -188,27 +180,27 @@ export default function Findings() {
 
           {/* Finding 8 */}
           <FindingCard number={8} title="AI Spend: Sanctioned vs. Unsanctioned">
-            <p className="text-gray-400 mb-7 leading-relaxed">
+            <p className="text-gray-300 mb-6">
               For every $1 spent on sanctioned AI tools, enterprises unknowingly spend an estimated
               $0.40 on unsanctioned AI subscriptions and usage. This &quot;shadow AI tax&quot; represents
               a massive blind spot in both budgets and security postures.
             </p>
-            <div className="flex items-end justify-center gap-16 h-[200px]">
+            <div className="flex items-end justify-center gap-12 h-[180px]">
               <div className="flex flex-col items-center">
-                <span className="text-white font-bold text-lg mb-2 tabular-nums">$1.00</span>
+                <span className="text-white font-bold text-lg mb-2">$1.00</span>
                 <div
                   className="w-20 rounded-t-lg animate-bar-grow-v"
-                  style={{ height: "150px", background: "linear-gradient(to top, #06b6d4, #22d3ee, #67e8f9)" }}
+                  style={{ height: "140px", background: "linear-gradient(to top, #6412A6, #8B3FD4)" }}
                 />
-                <span className="text-xs text-gray-500 mt-3 font-medium">Sanctioned</span>
+                <span className="text-xs text-gray-400 mt-2">Sanctioned</span>
               </div>
               <div className="flex flex-col items-center">
-                <span className="text-white font-bold text-lg mb-2 tabular-nums">$0.40</span>
+                <span className="text-white font-bold text-lg mb-2">$0.40</span>
                 <div
                   className="w-20 rounded-t-lg animate-bar-grow-v"
-                  style={{ height: "60px", background: "linear-gradient(to top, #ef4444, #f87171)", animationDelay: "0.2s" }}
+                  style={{ height: "56px", background: "linear-gradient(to top, #ef4444, #f87171)", animationDelay: "0.2s" }}
                 />
-                <span className="text-xs text-gray-500 mt-3 font-medium">Unsanctioned</span>
+                <span className="text-xs text-gray-400 mt-2">Unsanctioned</span>
               </div>
             </div>
           </FindingCard>
@@ -232,23 +224,23 @@ export default function Findings() {
 
           {/* Finding 10 */}
           <FindingCard number={10} title="Projected AI Governance Market Growth">
-            <p className="text-gray-400 mb-7 leading-relaxed">
+            <p className="text-gray-300 mb-6">
               The AI governance and security tooling market is projected to grow from $1.2B in 2024 to
               $8.7B by 2028 — a 7.3× increase. Enterprises are beginning to recognize that AI-specific
               security is no longer optional.
             </p>
             <VerticalBar
               data={[
-                { label: "2024", value: 12, color: "linear-gradient(to top, #22d3ee, #06b6d4)" },
+                { label: "2024", value: 12, color: "linear-gradient(to top, #6412A6, #8B3FD4)" },
                 { label: "2025", value: 24 },
                 { label: "2026", value: 42 },
                 { label: "2027", value: 65 },
                 { label: "2028", value: 87 },
               ]}
               unit=""
-              height={200}
+              height={180}
             />
-            <div className="text-center text-xs text-gray-500 mt-3">Market size ($100M units)</div>
+            <div className="text-center text-xs text-gray-500 mt-2">Market size ($100M units)</div>
           </FindingCard>
         </div>
       </div>
