@@ -115,8 +115,17 @@ export default function Industries() {
         <SectionHeading
           tag="Industry Breakdown"
           title="AI Security Posture by Industry"
-          subtitle="How six major sectors compare in AI adoption, shadow AI prevalence, and governance readiness."
+          subtitle="How six major sectors compare in AI adoption, shadow AI prevalence, and governance readiness, as illustrative estimates modeled on published adoption research."
         />
+
+        <div
+          className="rounded-2xl p-5 border border-amber-400/30 mb-10 text-sm text-amber-200/90"
+          style={{ background: "rgba(120,53,15,0.15)" }}
+        >
+          All figures on this page are illustrative estimates modeled on published industry
+          research. They are not survey results and should not be cited as Aona research. The
+          telemetry-based 2026 Shadow AI Index will replace them with measured data.
+        </div>
 
         {/* Comparison overview */}
         <div

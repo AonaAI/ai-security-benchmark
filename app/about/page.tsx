@@ -5,7 +5,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "About — AI Security Benchmark 2026",
   description:
-    "About the 2026 AI Security Benchmark research and Aona AI, the research sponsor.",
+    "About the 2026 AI Security Benchmark and Aona AI, the company behind it.",
 };
 
 export default function About() {
@@ -33,9 +33,9 @@ export default function About() {
               </p>
               <p>
                 The 2026 State of Enterprise AI Security Benchmark was created to fill this gap.
-                By surveying 500+ enterprises across six industries, we&apos;ve built the most
-                comprehensive picture of how organizations are (and aren&apos;t) managing AI security
-                risks.
+                It curates the strongest published research on enterprise AI security (IBM,
+                Zscaler, Microsoft, Cisco, Salesforce) into one picture of how organizations are
+                (and are not) managing AI security risks.
               </p>
               <p>
                 Our goal is simple: provide the data that security leaders, board members, and
@@ -55,7 +55,7 @@ export default function About() {
               {[
                 {
                   title: "Quantify Shadow AI",
-                  desc: "Measure the true scope of unsanctioned AI tool usage across industries.",
+                  desc: "Surface the scope of unsanctioned AI tool usage documented across industries.",
                 },
                 {
                   title: "Assess Governance Maturity",
@@ -99,9 +99,9 @@ export default function About() {
                 services, and enforce AI acceptable use policies — all without blocking productivity.
               </p>
               <p>
-                We commissioned this research because we believe transparency drives better security
+                We compiled this benchmark because we believe transparency drives better security
                 outcomes. When enterprises understand the true scope of AI risk, they make better
-                decisions — whether they use Aona or not.
+                decisions, whether they use Aona or not.
               </p>
               <p>
                 This report is freely available to the security community. If the findings resonate

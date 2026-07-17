@@ -48,8 +48,18 @@ export default function Findings() {
         <SectionHeading
           tag="Key Findings"
           title="10 Critical Insights from the 2026 Benchmark"
-          subtitle="Each finding is backed by survey data from 500+ enterprises across six industries."
+          subtitle="Findings with a named source come from published industry research; all other figures are illustrative estimates pending the telemetry-based 2026 Shadow AI Index."
         />
+
+        <div
+          className="rounded-2xl p-5 border border-amber-400/30 mb-10 text-sm text-amber-200/90"
+          style={{ background: "rgba(120,53,15,0.15)" }}
+        >
+          How to read this page: figures citing a named source (IBM, Zscaler, Microsoft, Cisco,
+          Salesforce) come from published research. Unattributed figures are illustrative estimates
+          modeled on industry trends and should not be cited as Aona research. The 2026 Shadow AI
+          Index, built on anonymized Aona platform telemetry, will replace them with measured data.
+        </div>
 
         <div className="space-y-8">
           {/* Finding 1 */}
@@ -93,9 +103,7 @@ export default function Findings() {
           {/* Finding 3 */}
           <FindingCard number={3} title="Data Leakage Incidents Involving AI">
             <p className="text-gray-300 mb-6">
-              AI-related data leakage incidents have surged 3.2× since 2024. Source code (34%) and customer
-              data (28%) are the most commonly exposed data types. Most incidents stem from employees
-              pasting sensitive information into general-purpose AI chat interfaces.
+              AI-related data leakage incidents have surged sharply over the past 12 months. Data transfers to AI/ML applications surged 93% in 2025, totalling more than 18,000 terabytes — an expanding target for cybercriminals, according to Zscaler ThreatLabz 2026. Source code (34%) and customer data (28%) remain the most commonly exposed data types. Most incidents stem from employees pasting sensitive information into general-purpose AI chat interfaces.
             </p>
             <VerticalBar
               data={[
@@ -113,14 +121,12 @@ export default function Findings() {
           {/* Finding 4 */}
           <FindingCard number={4} title="AI Policy Adoption Rates">
             <p className="text-gray-300 mb-6">
-              Only 55% of enterprises have any form of AI acceptable use policy, and just 23%
-              have policies that are regularly updated and enforced. The remaining 45% operate with
-              no formal AI governance guidelines whatsoever.
+              According to the IBM Cost of a Data Breach Report 2025, 63% of organizations lacked AI governance policies to manage AI or prevent the proliferation of shadow AI. Only 10% have policies that are actively enforced and audited. The gap between stated intent and operational governance remains the defining challenge for enterprise security leaders in 2026.
             </p>
             <div className="flex justify-around flex-wrap gap-6">
-              <DonutChart value={23} label="Enforced policy" color="#22c55e" />
-              <DonutChart value={32} label="Policy exists (unenforced)" color="#eab308" />
-              <DonutChart value={45} label="No policy" color="#ef4444" />
+              <DonutChart value={10} label="Enforced policy" color="#22c55e" />
+              <DonutChart value={27} label="Policy exists (unenforced)" color="#eab308" />
+              <DonutChart value={63} label="No AI governance" color="#ef4444" />
             </div>
           </FindingCard>
 
@@ -202,8 +208,7 @@ export default function Findings() {
           {/* Finding 9 */}
           <FindingCard number={9} title="Top AI Security Concerns for CISOs">
             <p className="text-gray-300 mb-6">
-              Data exfiltration via AI tops the list of CISO concerns (78%), followed by compliance
-              risk (65%), IP leakage (61%), and model poisoning / supply chain attacks (44%).
+              Data exfiltration via AI tops the list of CISO concerns (78%), followed by compliance risk (65%), IP leakage (61%), and model poisoning / supply chain attacks (44%). Critically, 97% of organizations that reported an AI-related security incident were found to have lacked proper AI access controls at the time of the breach (IBM, 2025) — underscoring that concern alone is insufficient without active governance.
             </p>
             <HorizontalBar
               data={[

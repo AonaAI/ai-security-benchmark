@@ -6,7 +6,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-8 text-sm text-gray-400">
         <div>
           <p className="font-semibold text-white mb-2">AI Security Benchmark</p>
-          <p>The definitive report on enterprise AI security posture. Research by Aona AI.</p>
+          <p>A benchmark of enterprise AI security posture, compiled from published research by Aona AI.</p>
         </div>
         <div>
           <p className="font-semibold text-white mb-2">Pages</p>
@@ -14,7 +14,7 @@ export default function Footer() {
             <Link href="/findings" className="block hover:text-white transition-colors">Key Findings</Link>
             <Link href="/industries" className="block hover:text-white transition-colors">Industry Breakdown</Link>
             <Link href="/methodology" className="block hover:text-white transition-colors">Methodology</Link>
-            <Link href="/download" className="block hover:text-white transition-colors">Download Report</Link>
+            <Link href="/download" className="block hover:text-white transition-colors">Full Report</Link>
             <Link href="/about" className="block hover:text-white transition-colors">About</Link>
           </div>
         </div>
@@ -27,7 +27,9 @@ export default function Footer() {
         </div>
       </div>
       <div className="max-w-7xl mx-auto mt-8 pt-8 border-t border-white/10 text-center text-xs text-gray-500">
-        © 2026 Aona AI. All rights reserved. Data is illustrative and based on industry research trends.
+        © 2026 Aona AI. All rights reserved. Compiled from published industry research with
+        sources cited inline; unattributed figures are illustrative estimates. The telemetry-based
+        2026 Shadow AI Index is in production.
       </div>
     </footer>
   );

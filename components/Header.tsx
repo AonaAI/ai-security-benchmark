@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 
 const links = [
@@ -7,7 +8,7 @@ const links = [
   { href: "/findings", label: "Key Findings" },
   { href: "/industries", label: "Industries" },
   { href: "/methodology", label: "Methodology" },
-  { href: "/download", label: "Download Report" },
+  { href: "/download", label: "Full Report" },
   { href: "/about", label: "About" },
 ];
 
@@ -20,12 +21,14 @@ export default function Header() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
         <Link href="/" className="flex items-center gap-2 font-bold text-lg text-white">
-          <span
-            className="w-8 h-8 rounded-lg flex items-center justify-center text-sm font-black"
-            style={{ background: "linear-gradient(135deg, #6412A6, #8B3FD4)" }}
-          >
-            AI
-          </span>
+          <Image
+            src="/logo.png"
+            alt="AI Security Benchmark"
+            width={36}
+            height={36}
+            className="rounded-lg"
+            priority
+          />
           <span className="hidden sm:inline">AI Security Benchmark</span>
         </Link>
         {/* Desktop */}

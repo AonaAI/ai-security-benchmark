@@ -27,9 +27,9 @@ export default function Home() {
             <span style={{ color: "#8B3FD4" }}>AI Security</span>
           </h1>
           <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mb-10">
-            The definitive benchmark report analyzing AI security practices,
-            shadow AI prevalence, and governance readiness across 500+
-            enterprises. Understand the risks. Take control.
+            The 2026 benchmark of enterprise AI security practices, shadow AI
+            prevalence, and governance readiness, compiled from published
+            industry research. Understand the risks. Take control.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
@@ -55,10 +55,10 @@ export default function Home() {
       <section className="py-20 px-4">
         <div className="max-w-6xl mx-auto">
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <StatCard value="73%" label="of employees use AI tools without IT approval" delay={0.1} />
-            <StatCard value="45%" label="of organizations have no AI acceptable use policy" delay={0.2} />
-            <StatCard value="3.2×" label="increase in AI-related data incidents since 2024" delay={0.3} />
-            <StatCard value="12%" label="of enterprises have full visibility into AI tool usage" delay={0.4} />
+            <StatCard value="48%" label="of employees have entered non-public company information into AI tools (Cisco, 2024)" delay={0.1} />
+            <StatCard value="63%" label="of organizations lack AI governance policies to prevent shadow AI proliferation (IBM, 2025)" delay={0.2} />
+            <StatCard value="83%" label="year-over-year surge in enterprise AI activity (Zscaler 2026)" delay={0.3} />
+            <StatCard value="16 min" label="average time to compromise an enterprise AI system (Zscaler ThreatLabz 2026)" delay={0.4} />
           </div>
         </div>
       </section>
@@ -77,30 +77,31 @@ export default function Home() {
               AI adoption is outpacing security at every level
             </h2>
             <p className="text-gray-300 mb-4">
-              Enterprise AI adoption has reached an inflection point. Our research across 500+
-              organizations reveals a stark reality: while 89% of enterprises now use AI tools in
-              daily operations, security and governance frameworks have failed to keep pace.
+              Enterprise AI adoption has reached an inflection point. Published research paints a
+              stark picture: enterprise AI activity surged 83% year over year (Zscaler ThreatLabz,
+              2026), while security and governance frameworks have failed to keep pace.
             </p>
             <p className="text-gray-300 mb-4">
-              Shadow AI — the use of unsanctioned AI tools by employees — has emerged as the
-              single largest unmanaged risk in enterprise security. With 73% of employees using
-              AI tools their IT teams don&apos;t know about, sensitive data is being shared with
-              third-party models at an unprecedented scale.
+              Shadow AI (the use of unsanctioned AI tools by employees) has emerged as the single
+              largest unmanaged risk in enterprise security. With 78% of AI users bringing their
+              own AI tools to work (Microsoft &amp; LinkedIn Work Trend Index, 2024), sensitive
+              data is being shared with third-party models at an unprecedented scale.
             </p>
             <p className="text-gray-300">
-              This report provides the data CISOs, CIOs, and security leaders need to understand
-              the scope of the problem and build a path toward responsible AI governance.
+              This benchmark curates that data for CISOs, CIOs, and security leaders. Figures with
+              a named source come from published research; the remaining figures are illustrative
+              estimates, clearly marked as such.
             </p>
           </div>
           <div
             className="rounded-2xl p-8 border border-white/10"
             style={{ background: "linear-gradient(135deg, #1a0533, #2d1054)" }}
           >
-            <h3 className="text-lg font-semibold text-white mb-6">AI Governance Maturity</h3>
+            <h3 className="text-lg font-semibold text-white mb-6">AI Governance Maturity (IBM, 2025)</h3>
             <div className="flex justify-around flex-wrap gap-6">
-              <DonutChart value={12} label="Full visibility" color="#22c55e" />
-              <DonutChart value={31} label="Partial controls" color="#eab308" />
-              <DonutChart value={57} label="No governance" color="#ef4444" />
+              <DonutChart value={10} label="Enforced policy" color="#22c55e" />
+              <DonutChart value={27} label="Policy exists (unenforced)" color="#eab308" />
+              <DonutChart value={63} label="No AI governance" color="#ef4444" />
             </div>
           </div>
         </div>
@@ -125,16 +126,14 @@ export default function Home() {
             style={{ background: "linear-gradient(135deg, #1a0533, #11021d)" }}
           >
             <h3 className="text-lg font-semibold text-white mb-6">
-              Shadow AI Prevalence by Industry
+              Shadow AI in Published Research
             </h3>
             <HorizontalBar
               data={[
-                { label: "Technology", value: 82 },
-                { label: "Financial Services", value: 76 },
-                { label: "Healthcare", value: 71 },
-                { label: "Education", value: 68 },
-                { label: "Manufacturing", value: 59 },
-                { label: "Government", value: 47 },
+                { label: "AI users who bring their own AI tools to work (Microsoft & LinkedIn, 2024)", value: 78 },
+                { label: "Organizations lacking an AI governance policy (IBM, 2025)", value: 63 },
+                { label: "Gen AI adopters using unapproved tools at work (Salesforce, 2024)", value: 55 },
+                { label: "Employees who entered non-public company data into AI tools (Cisco, 2024)", value: 48 },
               ]}
             />
           </div>
